@@ -1,38 +1,32 @@
-import { Component , ErrorInfo, ReactElement } from 'react';
+import { Component, ErrorInfo, ReactElement } from "react";
 
 interface State {
-    hasError: boolean
+  hasError: boolean;
 }
 
 interface Props {
-    children: ReactElement
+  children: ReactElement;
 }
 
-class ErrorBoundry extends Component<Props,State>{
+class ErrorBoundry extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      hasError: false,
+    };
+  }
 
-    constructor(props: Props) {
-        super(props);
-        this.state = { 
-            hasError: false 
-        };
-    }
-    
-      static getDerivedStateFromError() {
-        return { hasError: true, isSnackbarOpen: true };
-      }
+  static getDerivedStateFromError() {
+    return { hasError: true, isSnackbarOpen: true };
+  }
 
-    componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        console.warn(error,errorInfo)
-      }
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.warn(error, errorInfo);
+  }
 
-    render(){
-       return (
-        <>
-        {this.props.children}
-        </>
-       )
-    }  
-
+  render() {
+    return <>{this.props.children}</>;
+  }
 }
 
-export default ErrorBoundry
+export default ErrorBoundry;

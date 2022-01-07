@@ -1,12 +1,19 @@
 import { BrowserRouter } from "react-router-dom";
-import Routers from './base/MyRoutes'
-const App = ()=>{
+import { Provider } from "react-redux";
+import Routers from "./base/MyRoutes";
+import store from "./stores/index";
+import ErrorBoundary from "./base/ErrorBoundary";
 
-    return (
+const App = () => {
+  return (
+    <Provider store={store}>
+      <ErrorBoundary>
         <BrowserRouter>
-            <Routers/>
+          <Routers />
         </BrowserRouter>
-    )
-}
+      </ErrorBoundary>
+    </Provider>
+  );
+};
 
-export default App
+export default App;

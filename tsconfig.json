@@ -1,60 +1,33 @@
 {
-    "compilerOptions": {
-      "target": "es5",
-      "lib": [
-        "dom",
-        "dom.iterable",
-        "esnext"
-      ],
-      "paths": {
-        "Assets/*": [
-          "assets/*"
-        ],
-        "Icons/*": [
-          "assets/icons/*"
-        ],
-        "Hooks/*": [
-          "src/components/hooks/*"
-        ],
-        "Constants/*": [
-          "src/constants/*"
-        ],
-        "Stores/*": [
-          "src/stores/*"
-        ],
-        "Utils/*": [
-          "src/utils/*"
-        ],
-        "Base/*": [
-          "src/base/*"
-        ],
-        "Components/*": [
-            "src/components/*"
-        ],
-        "Pages/*": [
-            "src/pages/*"
-        ],
-        "Types/*": [
-          "@types/*"
-        ],
-      },
-      "allowJs": true,
-      "skipLibCheck": true,
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "noFallthroughCasesInSwitch": true,
-      "module": "esnext",
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "noEmit": true,
-      "jsx": "react-jsx",
-      "baseUrl": "./"
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "paths": {
+      "Assets/*": ["assets/*"],
+      "Icons/*": ["assets/icons/*"],
+      "Hooks/*": ["src/components/hooks/*"],
+      "Constants/*": ["src/constants/*"],
+      "Stores/*": ["src/stores/*"],
+      "Utils/*": ["src/utils/*"],
+      "Base/*": ["src/base/*"],
+      "Components/*": ["src/components/*"],
+      "Pages/*": ["src/pages/*"],
+      "Types/*": ["@types/*"]
     },
-    "include": [
-      "src"
-    ]
-  }
-  
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "."
+  },
+  "include": ["*/**/*.tsx", "*/**/*.ts"]
+}

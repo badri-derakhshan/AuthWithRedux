@@ -1,26 +1,24 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-import ErrorBoundary from './ErrorBoundary';
-import Home from '../pages/Home'
-import Login from '../pages/Login'
-const MyRoutes = ()=>{
+import { Route, Routes, Navigate } from "react-router-dom";
 
-    const IsLogin = false
-    return(
-        <Routes>
-            <Route path="*" element={ IsLogin ? Navigate({to:'/home'}) : Navigate({to:'/auth'}) } />
-            <Route path="auth" element={
-                <ErrorBoundary>
-                        <Login />
-                </ErrorBoundary>
-            }/>
-            <Route path="/Home" element={
-                 <ErrorBoundary>
-                         <Home/>
-                </ErrorBoundary>
-            }/>
-        </Routes>
-    )
+import ProtectedRoute from "./ProtectedRoute";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
 
-}
+const MyRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/auth" element={<Login />} />
+      <Route
+        path="/home"
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
+      ></Route>
+      <Route path="*" element={<Navigate to="/home" />} />
+    </Routes>
+  );
+};
 
-export default MyRoutes
+export default MyRoutes;
